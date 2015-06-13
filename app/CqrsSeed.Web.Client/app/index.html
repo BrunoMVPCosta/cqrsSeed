@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <base href="/" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="app">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="components/es5-shim/es5-shim.js"></script>
+      <script src="components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <!-- Static navbar -->
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
+                    </span>
+                </button>
+                <a class="navbar-brand" href="/">CQRS Seed</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li active-tab="/" is-exact><a href="/">Home</a></li>
+                  <li active-tab="/inventoryItems"><a href="/inventoryItems" >Inventory items (one ctrl)</a></li>                    
+
+                  <li active-tab="/inventoryItemList"><a href="/inventoryItemList" >Inventory items (2 ctrls)</a></li>                    
+                  <li><a href="/test123" >Invalid link</a></li>                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>    
+        <div class="content">
+            <div ng-view></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <script src="components/jquery/jquery.js"></script>
+    <!-- build:js scripts/angular.js -->
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-resource/angular-resource.js"></script>
+    <script src="components/angular-cookies/angular-cookies.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/components.js -->
+    <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="components/jquery-signalr/jquery.signalR.js"></script>
+    <script src="components/restangular/dist/restangular.js"></script>
+    <script src="components/lodash/dist/lodash.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/models/inventoryItems/inventoryItemsListModel.js"></script>
+    <script src="scripts/models/inventoryItems/inventoryItemsDetailsModel.js"></script>         
+
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/inventoryItems.js"></script>
+    <script src="scripts/controllers/inventoryItemList.js"></script>
+    <script src="scripts/controllers/inventoryItemDetail.js"></script>
+    <script src="scripts/controllers/init.js"></script>
+
+    <script src="scripts/domains/inventoryDomain.js"></script>
+    <script src="scripts/domains/init.js"></script>
+
+    <script src="scripts/services/signalrClient.js"></script>
+    <script src="scripts/services/init.js"></script>
+
+    <script src="scripts/directives/activeTab.js"></script>
+    <script src="scripts/directives/init.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+    
+    <script src='api/signalr/hubs'></script>
+</body>
+</html>
